@@ -1,6 +1,21 @@
-<h1>Editing Member</h1>
+<p id="notice"><%= notice %></p>
 
-<%= render 'form' %>
+
+<div class="row">
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Edit skills
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <%= render 'form' %>
 
 <%= link_to 'Show', @member %> |
 <%= link_to 'Back', members_path %>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4"></div>
+</div>
