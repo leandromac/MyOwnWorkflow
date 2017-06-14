@@ -1,69 +1,67 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @member.name %>
-</p>
 
-<p>
-  <strong>Degree:</strong>
-  <%= @member.degree %>
-</p>
 
-<p>
-  <strong>Location:</strong>
-  <%= @member.location %>
-</p>
+<div class="row">
+  <div class="col-lg-4">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        Profile
+      </div>
+      <div class="panel-body">
+          <p class="text-center"><%= @member.image %></p>
+          <p class="text-center lead"><%= @member.name %> <br>
+            <small style="font-size:14px" class="text-muted"><%= @member.skill.title %> / <%= @member.location %></small>
+          </p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @member.email %>
-</p>
+          <p> <b>Avaliations</b> <br>
+            <i class="fa fa-comments-o"></i> Feedback: <%= @member.feedback %><br>
+            <i class="glyphicon glyphicon-hourglass"></i> Deadline: <%= @member.deadline %><br>
+            <i class="fa fa-star-o"></i> Qualilty: <%= @member.quality %>
+          </p>
+          <hr>
+          <p>
+            <b>Degree:</b> <%= @member.degree %><br>
+            <b>Phone:</b> <%= @member.phone %><br>
+            <b>Email:</b> <%= @member.email %><br>
+          </p>
+          <p><b>Note</b><br>
+            <%= @member.note %>
+          </p>
+          <hr>
+          <p>
+            <a href="http://<%= @member.portfolio %>" target="_blank" class="btn btn-block btn-social btn-vk">
+                  <i class="fa fa-link"></i> Portifolio / Website
+            </a>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @member.phone %>
-</p>
+            <a href="mailto:<%= @member.email %>" class="btn btn-block btn-social btn-tumblr">
+                <i class="fa fa-envelope"></i> Email
+            </a>
 
-<p>
-  <strong>Portfolio:</strong>
-  <%= @member.portfolio %>
-</p>
+            <a class="btn btn-block btn-social btn-github">
+                <i class="fa fa-github"></i> Github
+            </a>
+          </p>
+      </div>
 
-<p>
-  <strong>Skill:</strong>
-  <%= @member.skill %>
-</p>
+    </div>
+  </div>
 
-<p>
-  <strong>Feedback:</strong>
-  <%= @member.feedback %>
-</p>
+  <div class="col-lg-8">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        Edit Profile
+      </div>
+      <div class="panel-body">
+        <p>aaa</p>
+      </div>
+      <div class="panel-footer">
+        Panel Footer
+      </div>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Deadline:</strong>
-  <%= @member.deadline %>
-</p>
-
-<p>
-  <strong>Quality:</strong>
-  <%= @member.quality %>
-</p>
-
-<p>
-  <strong>Others skills:</strong>
-  <%= @member.others_skills %>
-</p>
-
-<p>
-  <strong>Note:</strong>
-  <%= @member.note %>
-</p>
-
-<p>
-  <strong>Image:</strong>
-  <%= @member.image %>
-</p>
 
 <%= link_to 'Edit', edit_member_path(@member) %> |
 <%= link_to 'Back', members_path %>

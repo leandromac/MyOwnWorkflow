@@ -17,3 +17,7 @@
  *= require bootstrap
  *= require leaflet
  */
+
+ .btn:hover, .btn:focus, .btn.focus {
+    color: #FFF !important;
+ }
