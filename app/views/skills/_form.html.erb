@@ -11,19 +11,16 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+  <div class="form-group">
+    <%= f.text_field :title, class: 'form-control', placeholder: 'Skill title...' %>
   </div>
-  <div class="field">
-    <%= f.label :icon %><br>
-    <%= f.text_field :icon %>
+  <div class="form-group">
+    <%= f.text_field :icon, class: 'form-control', placeholder: 'Icon...' %>
   </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
+  <div class="form-group">
+    <%= f.text_area :description, class: 'form-control', placeholder: 'Description...' %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Save', class: 'btn btn-primary pull-right' %>
   </div>
 <% end %>
