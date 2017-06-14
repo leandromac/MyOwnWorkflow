@@ -63,11 +63,9 @@
               </span>
               <input type="text" class="form-control" placeholder="Github">
             </div>
-            <div class="form-group input-group">
-              <span class="input-group-addon">
-                <i class="fa fa-star"></i>
-              </span>
-              <%= f.text_field :skill_id, class: 'form-control', placeholder: 'Skill' %>
+            <div class="form-group">
+
+              <%= f.collection_select(:skill_id, Skill.all, :id, :title, {}, { class:'form-control' }) %>
             </div>
           </div>
           </div>
@@ -75,34 +73,34 @@
             <div class="col-lg-4">
               <div class="form-group">
                 <label><i class="fa fa-comments-o"></i> Feedback</label>
-                <select class="form-control">
-                    <option>-- Escolha --</option>
-                    <option>Regular</option>
-                    <option>Bom</option>
-                    <option>Excelente</option>
-                </select>
+               <%= select_tag :feedback, "
+                <option>-- Escolha --</option>
+                <option>Bom</option>
+                <option>Ótimo</option>
+                <option>Excelente</option>".html_safe, class: 'form-control'
+                %>
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-group">
                 <label><i class="glyphicon glyphicon-hourglass"></i> Deadline</label>
-                <select class="form-control">
-                    <option>-- Escolha --</option>
-                    <option>Regular</option>
-                    <option>Bom</option>
-                    <option>Excelente</option>
-                </select>
+                <%= select_tag :deadline, "
+                <option>-- Escolha --</option>
+                <option>Bom</option>
+                <option>Ótimo</option>
+                <option>Excelente</option>".html_safe, class: 'form-control'
+                %>
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-group">
                 <label><i class="fa fa-thumbs-up"></i> Quality</label>
-                <select class="form-control">
-                    <option>-- Escolha --</option>
-                    <option>Regular</option>
-                    <option>Bom</option>
-                    <option>Excelente</option>
-                </select>
+                <%= select_tag :quality, "
+                <option>-- Escolha --</option>
+                <option>Bom</option>
+                <option>Ótimo</option>
+                <option>Excelente</option>".html_safe, class: 'form-control'
+                %>
               </div>
             </div>
           </div>

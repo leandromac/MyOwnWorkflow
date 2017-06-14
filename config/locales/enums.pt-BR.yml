@@ -1,0 +1,6 @@
+'pt-BR':
+  enums:
+    avaliations:
+      notbad: Notbad
+      good: good
+      excellent: Excellent
