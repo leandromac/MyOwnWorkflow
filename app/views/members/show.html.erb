@@ -1,7 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-
-
 <div class="row">
   <div class="col-lg-4">
     <div class="panel panel-default">
@@ -14,24 +12,15 @@
             <small style="font-size:14px" class="text-muted"><%= @member.skill.title %> / <%= @member.location %></small>
           </p>
 
-          <p> <b>Avaliations</b> <br>
+          <p>
             <i class="fa fa-comments-o"></i> Feedback: <%= @member.feedback %><br>
             <i class="glyphicon glyphicon-hourglass"></i> Deadline: <%= @member.deadline %><br>
             <i class="fa fa-star-o"></i> Qualilty: <%= @member.quality %>
           </p>
           <hr>
           <p>
-            <b>Degree:</b> <%= @member.degree %><br>
-            <b>Phone:</b> <%= @member.phone %><br>
-            <b>Email:</b> <%= @member.email %><br>
-          </p>
-          <p><b>Note</b><br>
-            <%= @member.note %>
-          </p>
-          <hr>
-          <p>
             <a href="http://<%= @member.portfolio %>" target="_blank" class="btn btn-block btn-social btn-vk">
-                  <i class="fa fa-link"></i> Portifolio / Website
+                  <i class="fa fa-link"></i> Portfolio / Website
             </a>
 
             <a href="mailto:<%= @member.email %>" class="btn btn-block btn-social btn-tumblr">
@@ -47,21 +36,7 @@
     </div>
   </div>
 
-  <div class="col-lg-8">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        Edit Profile
-      </div>
-      <div class="panel-body">
-        <p>aaa</p>
-      </div>
-      <div class="panel-footer">
-        Panel Footer
-      </div>
-    </div>
-  </div>
+  <%= render partial: "form" %>
 </div>
 
 
-<%= link_to 'Edit', edit_member_path(@member) %> |
-<%= link_to 'Back', members_path %>

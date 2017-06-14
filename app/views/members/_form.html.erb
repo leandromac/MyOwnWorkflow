@@ -11,59 +11,124 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :degree %><br>
-    <%= f.text_field :degree %>
-  </div>
-  <div class="field">
-    <%= f.label :location %><br>
-    <%= f.text_field :location %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :phone %><br>
-    <%= f.text_field :phone %>
-  </div>
-  <div class="field">
-    <%= f.label :portfolio %><br>
-    <%= f.text_field :portfolio %>
-  </div>
-  <div class="field">
-    <%= f.label :skill_id %><br>
-    <%= f.text_field :skill_id %>
-  </div>
-  <div class="field">
-    <%= f.label :feedback %><br>
-    <%= f.text_field :feedback %>
-  </div>
-  <div class="field">
-    <%= f.label :deadline %><br>
-    <%= f.text_field :deadline %>
-  </div>
-  <div class="field">
-    <%= f.label :quality %><br>
-    <%= f.text_field :quality %>
-  </div>
-  <div class="field">
-    <%= f.label :others_skills %><br>
-    <%= f.text_field :others_skills %>
-  </div>
-  <div class="field">
-    <%= f.label :note %><br>
-    <%= f.text_area :note %>
-  </div>
-  <div class="field">
-    <%= f.label :image %><br>
-    <%= f.text_field :image %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="col-lg-8">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        Curriculo
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="form-group input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-font"></i>
+              </span>
+              <%= f.text_field :name, class: 'form-control', placeholder: 'Name' %>
+            </div>
+            <div class="form-group input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-envelope"></i>
+              </span>
+              <%= f.text_field :email, class: 'form-control', placeholder: 'Email' %>
+            </div>
+            <div class="form-group input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-phone"></i>
+              </span>
+              <%= f.text_field :phone, class: 'form-control', placeholder: 'Phone' %>
+            </div>
+            <div class="form-group input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-mortar-board"></i>
+              </span>
+              <%= f.text_field :degree, class: 'form-control', placeholder: 'Degree' %>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="form-group input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-link"></i>
+              </span>
+              <%= f.text_field :portfolio, class: 'form-control', placeholder: 'Portfolio' %>
+            </div>
+            <div class="form-group input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-map-marker"></i>
+              </span>
+              <%= f.text_field :location, class: 'form-control', placeholder: 'Location' %>
+            </div>
+            <div class="form-group input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-github-alt"></i>
+              </span>
+              <input type="text" class="form-control" placeholder="Github">
+            </div>
+            <div class="form-group input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-star"></i>
+              </span>
+              <%= f.text_field :skill_id, class: 'form-control', placeholder: 'Skill' %>
+            </div>
+          </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="form-group">
+                <label><i class="fa fa-comments-o"></i> Feedback</label>
+                <select class="form-control">
+                    <option>-- Escolha --</option>
+                    <option>Regular</option>
+                    <option>Bom</option>
+                    <option>Excelente</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="form-group">
+                <label><i class="glyphicon glyphicon-hourglass"></i> Deadline</label>
+                <select class="form-control">
+                    <option>-- Escolha --</option>
+                    <option>Regular</option>
+                    <option>Bom</option>
+                    <option>Excelente</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="form-group">
+                <label><i class="fa fa-thumbs-up"></i> Quality</label>
+                <select class="form-control">
+                    <option>-- Escolha --</option>
+                    <option>Regular</option>
+                    <option>Bom</option>
+                    <option>Excelente</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="form-group input-group">
+                <span class="input-group-addon">
+                  <i class="fa fa-star-o"></i>
+                </span>
+                <%= f.text_field :others_skills, class: 'form-control', placeholder: 'Others skills...' %>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="form-group">
+                  <label>Notes</label>
+                  <%= f.text_area :note, class: 'form-control', rows: '2' %>
+              </div>
+            </div>
+          </div>
+        </div>
+      <div class="panel-footer">
+        <%= link_to 'Back', members_path, class: 'btn btn-default' %>
+        <%= f.submit 'Save changes', class: 'btn btn-success pull-right' %>
+      </div>
+    </div>
   </div>
 <% end %>
