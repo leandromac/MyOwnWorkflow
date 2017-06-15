@@ -52,14 +52,7 @@
               </div>
             </div>
             <hr>
-            <div class="row">
-              <div class="col-lg-9">
-                <h4>Services</h4>
-              </div>
-              <div class="col-lg-3">
-                <h4>New service</h4>
-              </div>
-            </div>
+            <%= render 'services/form' %>
           </div>
           <div class="panel-footer">
               <%= link_to 'Back', orders_path, class: 'btn btn-default' %>
