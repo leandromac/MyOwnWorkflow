@@ -1,44 +1,72 @@
-<p id="notice"><%= notice %></p>
+<%= form_for(@order) do |f| %>
+  <% if @order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
 
-<p>
-  <strong>Client:</strong>
-  <%= @order.client %>
-</p>
+      <ul>
+      <% @order.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 
-<p>
-  <strong>Payment:</strong>
-  <%= @order.payment %>
-</p>
+<div class="row">
+  <div class="col-lg-12">
+      <div class="panel panel-default">
+          <div class="panel-heading">
+              Order: <b><%= "COD0#{@order.id}" %></b>
+              <span class="pull-right">Deadline: <b><%= @order.deadline %></b></span>
+          </div>
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-lg-3">
+                <p>
+                   <%= @order.member.name %> <br>
+                  <small class="text-muted"><%= @order.skill.title %></small>
+                </p>
+              </div>
+              <div class="col-lg-3">
+                <div class="form-group">
+                <%= f.collection_select(:client_id, Client.all, :id, :name, {}, { class:'form-control' }) %>
+                </div>
+              </div>
+              <div class="col-lg-3">
+                <div class="form-group">
+                  <select class="form-control">
+                      <option>-- Payment method --</option>
+                      <option>A vista</option>
+                      <option>Cartão de crédito</option>
+                      <option>Boleto bancário</option>
+                      <option>Cheque</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-lg-3">
+                <div class="form-group input-group">
+                  <span class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                  </span>
+                  <%= f.date_field :deadline, class: 'form-control' %>
+                </div>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-lg-9">
+                <h4>Services</h4>
+              </div>
+              <div class="col-lg-3">
+                <h4>New service</h4>
+              </div>
+            </div>
+          </div>
+          <div class="panel-footer">
+              <%= link_to 'Back', orders_path, class: 'btn btn-default' %>
+              <%= f.submit 'Create order', class: 'btn btn-success pull-right' %>
+          </div>
+      </div>
+  </div>
+</div>
 
-<p>
-  <strong>Deadline:</strong>
-  <%= @order.deadline %>
-</p>
-
-<p>
-  <strong>Skill:</strong>
-  <%= @order.skill %>
-</p>
-
-<p>
-  <strong>Member:</strong>
-  <%= @order.member %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @order.description %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @order.price %>
-</p>
-
-<p>
-  <strong>Status:</strong>
-  <%= @order.status %>
-</p>
-
-<%= link_to 'Edit', edit_order_path(@order) %> |
-<%= link_to 'Back', orders_path %>
+<% end %>

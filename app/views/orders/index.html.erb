@@ -31,10 +31,10 @@
                 <tbody>
                   <% @orders.each do |order| %>
                    <tr class="gradeA odd" role="row">
-                      <td class="sorting_1"><%= link_to order.id, order %></td>
-                      <td><%= client.client %></td>
-                      <td><%= client.description %></td>
-                      <td><%= client.deadline %></td>
+                      <td class="sorting_1"><%= link_to "COD0#{order.id}", order %></td>
+                      <td><%= order.client %></td>
+                      <td><%= order.description %></td>
+                      <td><%= order.deadline %></td>
                   </tr>
                   <% end %>
                 </tbody>

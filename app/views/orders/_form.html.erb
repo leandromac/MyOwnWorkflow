@@ -10,40 +10,36 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
+<div class="col-lg-6">
+  <div class="form-group">
     <%= f.label :client_id %><br>
-    <%= f.text_field :client_id %>
+    <%= f.collection_select(:client_id, Client.all, :id, :name, {}, { class:'form-control' }) %>
   </div>
-  <div class="field">
-    <%= f.label :payment %><br>
-    <%= f.text_field :payment %>
+  <div class="form-group">
+    <%= f.text_field :payment, class: 'form-control', placeholder: 'Payment method' %>
   </div>
-  <div class="field">
-    <%= f.label :deadline %><br>
-    <%= f.text_field :deadline %>
+  <div class="form-group">
+    <%= f.date_field :deadline, class: 'form-control' %>
   </div>
-  <div class="field">
-    <%= f.label :skill_id %><br>
-    <%= f.text_field :skill_id %>
+  <div class="form-group">
+    <%= f.collection_select(:skill_id, Skill.all, :id, :title, {}, { class:'form-control' }) %>
   </div>
-  <div class="field">
-    <%= f.label :member_id %><br>
-    <%= f.text_field :member_id %>
+  <div class="form-group">
+    <%= f.collection_select(:member_id, Member.all, :id, :name, {}, { class:'form-control' }) %>
   </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_field :description %>
+  <div class="form-group">
+    <%= f.text_field :description, class: 'form-control', placeholder: 'Description' %>
   </div>
-  <div class="field">
-    <%= f.label :price %><br>
-    <%= f.text_field :price %>
+  <div class="form-group">
+    <%= f.text_field :price, class: 'form-control', placeholder: 'Price' %>
   </div>
-  <div class="field">
-    <%= f.label :status %><br>
-    <%= f.text_field :status %>
+  <div class="form-group">
+    <%= f.text_field :status, class: 'form-control', placeholder: 'Status' %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-group">
+    <%= link_to 'Back', orders_path, class: 'btn btn-default' %>
+    <%= f.submit 'Save', class: 'btn btn-primary'   %>
+
   </div>
 <% end %>
+</div>
