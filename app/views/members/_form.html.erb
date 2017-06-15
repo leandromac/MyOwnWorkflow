@@ -29,7 +29,7 @@
               <span class="input-group-addon">
                 <i class="fa fa-envelope"></i>
               </span>
-              <%= f.text_field :email, class: 'form-control', placeholder: 'Email' %>
+              <%= f.email_field :email, class: 'form-control', placeholder: 'Email' %>
             </div>
             <div class="form-group input-group">
               <span class="input-group-addon">
@@ -49,7 +49,7 @@
               <span class="input-group-addon">
                 <i class="fa fa-link"></i>
               </span>
-              <%= f.text_field :portfolio, class: 'form-control', placeholder: 'ex: www.yourportfolio.com' %>
+              <%= f.url_field :portfolio, class: 'form-control', placeholder: 'ex: http://www.yourportfolio.com' %>
             </div>
             <div class="form-group input-group">
               <span class="input-group-addon">
@@ -61,7 +61,7 @@
               <span class="input-group-addon">
                 <i class="fa fa-github-alt"></i>
               </span>
-              <%= f.text_field :github, class: 'form-control', placeholder: 'ex: www.github.com/username' %>
+              <%= f.url_field :github, class: 'form-control', placeholder: 'ex: http://www.github.com/username' %>
             </div>
             <div class="form-group">
 
