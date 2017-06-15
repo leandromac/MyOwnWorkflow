@@ -11,31 +11,73 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :phone %><br>
-    <%= f.text_field :phone %>
-  </div>
-  <div class="field">
-    <%= f.label :website %><br>
-    <%= f.text_field :website %>
-  </div>
-  <div class="field">
-    <%= f.label :address %><br>
-    <%= f.text_field :address %>
-  </div>
-  <div class="field">
-    <%= f.label :fiscal_number %><br>
-    <%= f.text_field :fiscal_number %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="col-lg-8">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        Curriculo
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="form-group input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-font"></i>
+              </span>
+              <%= f.text_field :name, class: 'form-control', placeholder: 'Name' %>
+            </div>
+            <div class="form-group input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-envelope"></i>
+              </span>
+              <%= f.email_field :email, class: 'form-control', placeholder: 'Email' %>
+            </div>
+            <div class="form-group input-group">
+              <span class="input-group-addon">
+                <i class="glyphicon glyphicon-asterisk  "></i>
+              </span>
+              <%= f.text_field :fiscal_number, class: 'form-control', placeholder: 'Fiscal number' %>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="form-group input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-link"></i>
+              </span>
+              <%= f.url_field :website, class: 'form-control', placeholder: 'ex: http://www.yoursite.com' %>
+            </div>
+            <div class="form-group input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-phone"></i>
+              </span>
+              <%= f.text_field :phone, class: 'form-control', placeholder: 'Phone' %>
+            </div>
+          </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="form-group">
+              <div class="form-group input-group">
+                <span class="input-group-addon">
+                  <i class="fa fa-map-marker"></i>
+                </span>
+                <%= f.text_field :address, class: 'form-control', placeholder: 'Location (ex: São Paulo, Brasil)' %>
+              </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="form-group">
+                  <label>Enviar logo da empresa</label>
+                  <input type="file">
+              </div>
+            </div>
+          </div>
+        </div>
+      <div class="panel-footer">
+        <%= link_to 'Back', clients_path, class: 'btn btn-default' %>
+        <%= f.submit 'Save changes', class: 'btn btn-success pull-right' %>
+      </div>
+    </div>
   </div>
 <% end %>

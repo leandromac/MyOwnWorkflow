@@ -1,34 +1,37 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @client.name %>
-</p>
+<div class="row">
+  <div class="col-lg-4">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        Profile
+      </div>
+      <div class="panel-body">
+          <p class="text-center">
+            <img src="https://lh4.ggpht.com/TwRb6ZooeHhSzA9pJVvlQmE7wjYmpLjk7M-VlzBT8rIsZyrLxbHlJxQ1I8QKWAZh6w=w300" width="55%" class="img-rounded">
+          </p>
+          <p class="text-center lead"><%= @client.name %> <br>
+            <small style="font-size:14px" class="text-muted"><%= @client.address %></small>
+          </p>
+          <hr>
+          <p>
+            <a href="<%= @client.website %>" target="_blank" class="btn btn-block btn-social btn-vk">
+                  <i class="fa fa-link"></i> Website
+            </a>
 
-<p>
-  <strong>Email:</strong>
-  <%= @client.email %>
-</p>
+            <a href="mailto:<%= @client.email %>" class="btn btn-block btn-social btn-tumblr">
+                <i class="fa fa-envelope"></i> Email
+            </a>
+          </p>
+          <hr>
+          <p>
+          <%= link_to 'Excluir este cliente', @client, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-block btn-sm' %>
+            </a>
+          </p>
+      </div>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @client.phone %>
-</p>
+    </div>
+  </div>
 
-<p>
-  <strong>Website:</strong>
-  <%= @client.website %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @client.address %>
-</p>
-
-<p>
-  <strong>Fiscal number:</strong>
-  <%= @client.fiscal_number %>
-</p>
-
-<%= link_to 'Edit', edit_client_path(@client) %> |
-<%= link_to 'Back', clients_path %>
+  <%= render partial: "form" %>
+</div>
