@@ -15,6 +15,7 @@
 //= require turbolinks
 //= require bootstrap_sb_admin_base_v2
 //= require bootstrap
+//= require cocoon
 //= require angular
 //= require leaflet
 //= require_tree .

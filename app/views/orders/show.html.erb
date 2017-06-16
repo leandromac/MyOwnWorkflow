@@ -52,7 +52,11 @@
               </div>
             </div>
             <hr>
-            <%= render 'services/form' %>
+            <%= f.fields_for :services do |service| %>
+              <%= render partial: "orders/shared/service", locals: { f: service } %>
+            <% end %>
+            <%= link_to_add_association("Aplly", f, :services) %>
+
           </div>
           <div class="panel-footer">
               <%= link_to 'Back', orders_path, class: 'btn btn-default' %>

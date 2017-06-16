@@ -10,6 +10,7 @@ class OrdersController < ApplicationController
   # GET /orders/1
   # GET /orders/1.json
   def show
+    @services = Service.all
   end
 
   # GET /orders/new
@@ -69,6 +70,7 @@ class OrdersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:client_id, :payment, :deadline, :skill_id, :member_id, :description, :price, :status)
+      params.require(:order).permit(:client_id, :payment, :deadline, :skill_id, :member_id, :description, :price, :status,
+        services_attributes: [:id, :skill, :_destroy] )
     end
 end
