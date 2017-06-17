@@ -33,7 +33,7 @@
                    <tr class="gradeA odd" role="row">
                       <td class="sorting_1"><%= link_to "COD0#{order.id}", order %></td>
                       <td><%= order.client.name %></td>
-                      <td><%= order.description %></td>
+                      <td><%= truncate(order.description, lenght: 30) %></td>
                       <td><%= order.deadline %></td>
                   </tr>
                   <% end %>

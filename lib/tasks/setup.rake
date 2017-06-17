@@ -66,6 +66,7 @@ namespace :setup do
                 phone: "999999999",
                 portfolio: "http://www.leandromacedo.com",
                 github: "http://www.github.com/leandromac",
+                location: "Setúbal, Portugal",
                 skill_id: 3,
             )
             Member.create!(
@@ -74,6 +75,7 @@ namespace :setup do
                 phone: "999999999",
                 portfolio: "http://www.utu.agency",
                 github: "http://www.github.com/utu",
+                location: "Alcântara, Portugal",
                 skill_id: 5,
             )
             Member.create!(
@@ -81,6 +83,7 @@ namespace :setup do
                 email: "fabio@utu.agency",
                 phone: "999999999",
                 portfolio: "http://www.utu.agency",
+                location: "Lisboal, Portugal",
                 skill_id: 7,
             )
             Member.create!(
@@ -88,6 +91,7 @@ namespace :setup do
                 email: "kamilla_fn@hotmail.com",
                 phone: "999999999",
                 portfolio: "http://www.facebook.com/kamillaalves",
+                location: "Penalva, Portugal",
                 skill_id: 2,
             )
         puts "MEMBERS criados com sucesso!"
