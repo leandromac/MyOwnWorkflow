@@ -9,6 +9,8 @@ gem 'sqlite3'
 gem 'cocoon'
 # Forms made easy for Rails! It's tied to a simple DSL, with no opinion on markup. http://blog.plataformatec.com.br/tag/…
 gem 'simple_form'
+# Flexible authentication solution for Rails with Warden. http://blog.plataformatec.com.br/tag/…
+gem 'devise'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
