@@ -30,28 +30,30 @@
                     </thead>
                 <tbody>
                   <% @members.each do |member| %>
-                   <tr class="gradeA odd" role="row">
-                      <td class="sorting_1"><%= link_to member.name, member %></td>
-                      <td><%= member.skill.title %></td>
-                      <td class="text-center">
-                      <% unless member.portfolio.blank? %>
-                        <%= link_to member.portfolio, target: '_blank', class: 'btn btn-social-icon btn-sm btn-vk' do %>
-                          <i class="fa fa-link"></i>
+                    <% unless member.skill.blank? %>
+                     <tr class="gradeA odd" role="row">
+                        <td class="sorting_1"><%= link_to member.name, member %></td>
+                        <td><%= member.skill.title %></td>
+                        <td class="text-center">
+                        <% unless member.portfolio.blank? %>
+                          <%= link_to member.portfolio, target: '_blank', class: 'btn btn-social-icon btn-sm btn-vk' do %>
+                            <i class="fa fa-link"></i>
+                          <% end %>
                         <% end %>
-                      <% end %>
-                      <% unless member.email.blank? %>
-                        <%= mail_to member.email, class: 'btn btn-social-icon btn-sm btn-tumblr' do %>
-                          <i class="fa fa-envelope"></i>
+                        <% unless member.email.blank? %>
+                          <%= mail_to member.email, class: 'btn btn-social-icon btn-sm btn-tumblr' do %>
+                            <i class="fa fa-envelope"></i>
+                          <% end %>
                         <% end %>
-                      <% end %>
-                      <% unless member.github.blank? %>
-                        <%= link_to member.github, target: '_blank', class: 'btn btn-social-icon btn-sm btn-github' do %>
-                          <i class="fa fa-github"></i>
+                        <% unless member.github.blank? %>
+                          <%= link_to member.github, target: '_blank', class: 'btn btn-social-icon btn-sm btn-github' do %>
+                            <i class="fa fa-github"></i>
+                          <% end %>
                         <% end %>
-                      <% end %>
-                      </td>
-                      <td><%= member.location %></td>
-                  </tr>
+                        </td>
+                        <td><%= member.location %></td>
+                      </tr>
+                    <% end %>
                   <% end %>
                 </tbody>
                 </table></div></div><div class="row"><div class="col-sm-6"><div class="dataTables_info" id="dataTables-example_info" role="status" aria-live="polite">Showing 1 to 10 of 57 entries</div></div><div class="col-sm-6"><div class="dataTables_paginate paging_simple_numbers" id="dataTables-example_paginate"><ul class="pagination"><li class="paginate_button previous disabled" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_previous"><a href="#">Previous</a></li><li class="paginate_button active" aria-controls="dataTables-example" tabindex="0"><a href="#">1</a></li><li class="paginate_button " aria-controls="dataTables-example" tabindex="0"><a href="#">2</a></li><li class="paginate_button " aria-controls="dataTables-example" tabindex="0"><a href="#">3</a></li><li class="paginate_button " aria-controls="dataTables-example" tabindex="0"><a href="#">4</a></li><li class="paginate_button " aria-controls="dataTables-example" tabindex="0"><a href="#">5</a></li><li class="paginate_button " aria-controls="dataTables-example" tabindex="0"><a href="#">6</a></li><li class="paginate_button next" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_next"><a href="#">Next</a></li></ul></div></div></div></div>

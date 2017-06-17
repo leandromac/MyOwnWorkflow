@@ -13,15 +13,17 @@
                     <table class="table table-striped table-bordered table-hover">
                         <tbody>
                           <% @skills.each do |skill| %>
-                            <tr>
-                                <td><i class="<%= skill.icon %>"></i></td>
-                                <td><%= skill.title %></td>
-                                <td><%= skill.description %></td>
-                                <td style="width:67px">
-                                  <%= link_to "<i class='fa fa-edit'></i>".html_safe, edit_skill_path(skill), class: 'btn btn-warning btn-xs' %>
-                                  <%= link_to "<i class='fa fa-trash'></i>".html_safe, skill, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs' %>
-                                </td>
-                            </tr>
+                            <% unless skill.icon.blank? %>
+                                <tr>
+                                    <td><i class="<%= skill.icon %>"></i></td>
+                                    <td><%= skill.title %></td>
+                                    <td><%= skill.description %></td>
+                                    <td style="width:67px">
+                                      <%= link_to "<i class='fa fa-edit'></i>".html_safe, edit_skill_path(skill), class: 'btn btn-warning btn-xs' %>
+                                      <%= link_to "<i class='fa fa-trash'></i>".html_safe, skill, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs' %>
+                                    </td>
+                                </tr>
+                            <% end %>
                           <% end %>
                         </tbody>
                     </table>

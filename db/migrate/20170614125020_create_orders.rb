@@ -3,7 +3,7 @@ class CreateOrders < ActiveRecord::Migration
     create_table :orders do |t|
       t.references :client, index: true, foreign_key: true
       t.string :payment
-      t.string :deadline
+      t.date :deadline
       t.references :skill, index: true, foreign_key: true
       t.references :member, index: true, foreign_key: true
       t.string :description

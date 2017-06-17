@@ -1,4 +1,4 @@
-<%= form_for(@order) do |f| %>
+<%= simple_form_for @order do |f| %>
   <% if @order.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
@@ -16,13 +16,13 @@
       <div class="panel panel-default">
           <div class="panel-heading">
               Order: <b><%= "COD0#{@order.id}" %></b>
-              <span class="pull-right">Deadline: <b><%= @order.deadline %></b></span>
+              <span class="pull-right">Created ad: <b><%= @order.created_at %></b></span>
           </div>
           <div class="panel-body">
             <div class="row">
-              <div class="col-lg-3">
+              <div class="col-lg-2">
                 <p>
-                   <%= @order.member.name %> <br>
+                   <%= truncate(@order.member.name, length: 20, separator: '') %> <br>
                   <small class="text-muted"><%= @order.skill.title %></small>
                 </p>
               </div>
@@ -42,10 +42,10 @@
                   </select>
                 </div>
               </div>
-              <div class="col-lg-3">
+              <div class="col-lg-4">
                 <div class="form-group input-group">
                   <span class="input-group-addon">
-                    <i class="fa fa-calendar"></i>
+                    <i class="fa fa-calendar"></i> Deadline
                   </span>
                   <%= f.date_field :deadline, class: 'form-control' %>
                 </div>
@@ -55,7 +55,6 @@
             <%= f.fields_for :services do |service| %>
               <%= render partial: "orders/shared/service", locals: { f: service } %>
             <% end %>
-            <%= link_to_add_association("Aplly", f, :services) %>
 
           </div>
           <div class="panel-footer">
