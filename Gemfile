@@ -26,6 +26,8 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap'
   gem 'rails-assets-angular'
   gem 'rails-assets-leaflet'
+  gem 'rails-assets-bootstrap.growl'
+  gem 'rails-assets-animate-css'
 end
 
 # Rails gem of the Bootstrap based admin theme SB Admin 2. http://dreamingechoes.github.io/boots…
