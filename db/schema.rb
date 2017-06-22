@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170622175751) do
+ActiveRecord::Schema.define(version: 20170622200746) do
 
   create_table "clients", force: :cascade do |t|
     t.string   "name"
@@ -20,9 +20,13 @@ ActiveRecord::Schema.define(version: 20170622175751) do
     t.string   "website"
     t.string   "address"
     t.string   "fiscal_number"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.string   "image"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "members", force: :cascade do |t|
@@ -39,9 +43,13 @@ ActiveRecord::Schema.define(version: 20170622175751) do
     t.string   "others_skills"
     t.text     "note"
     t.string   "image"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.string   "github"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   add_index "members", ["skill_id"], name: "index_members_on_skill_id"
