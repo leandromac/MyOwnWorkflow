@@ -1,6 +1,9 @@
 class ClientsController < ApplicationController
   before_action :set_client, only: [:show, :edit, :update, :destroy]
 
+  # has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
+  # validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
+
   # GET /clients
   # GET /clients.json
   def index
@@ -69,6 +72,6 @@ class ClientsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def client_params
-      params.require(:client).permit(:name, :email, :phone, :website, :address, :fiscal_number)
+      params.require(:client).permit(:name, :email, :phone, :website, :address, :fiscal_number, :image)
     end
 end

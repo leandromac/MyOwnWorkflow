@@ -1,6 +1,9 @@
 class MembersController < ApplicationController
   before_action :set_member, only: [:show, :edit, :update, :destroy]
 
+  # has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
+  # validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
+
   # GET /members
   # GET /members.json
   def index
@@ -26,7 +29,7 @@ class MembersController < ApplicationController
   def create
     @member = Member.new(member_params)
 
-    respond_to do |format|
+  respond_to do |format|
       if @member.save
         format.html { redirect_to @member, notice: 'Member was successfully created.' }
         format.json { render :show, status: :created, location: @member }
@@ -69,6 +72,7 @@ class MembersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def member_params
-      params.require(:member).permit(:name, :degree, :location, :email, :phone, :portfolio, :github, :skill_id, :feedback, :deadline, :quality, :others_skills, :note, :image)
+      params.require(:member).permit(:name, :degree, :location, :email, :phone, :portfolio,
+        :github,:skill_id, :feedback, :deadline, :quality, :others_skills, :note, :image)
     end
 end

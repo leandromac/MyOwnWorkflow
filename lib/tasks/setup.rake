@@ -59,6 +59,7 @@ namespace :setup do
         puts "Criando MEMBERS..."
             Member.create!(
                 name: "-- Escolha um Membro --",
+                email: "escolha@email.com",
             )
             Member.create!(
                 name: "Leandro Macedo",
@@ -68,6 +69,7 @@ namespace :setup do
                 github: "http://www.github.com/leandromac",
                 location: "Setúbal, Portugal",
                 skill_id: 3,
+
             )
             Member.create!(
                 name: "Bruno Luz",
@@ -77,6 +79,7 @@ namespace :setup do
                 github: "http://www.github.com/utu",
                 location: "Alcântara, Portugal",
                 skill_id: 5,
+
             )
             Member.create!(
                 name: "Fábio Oliveira",
@@ -85,6 +88,7 @@ namespace :setup do
                 portfolio: "http://www.utu.agency",
                 location: "Lisboal, Portugal",
                 skill_id: 7,
+
             )
             Member.create!(
                 name: "Kamilla Alves",
@@ -93,6 +97,7 @@ namespace :setup do
                 portfolio: "http://www.facebook.com/kamillaalves",
                 location: "Penalva, Portugal",
                 skill_id: 2,
+
             )
         puts "MEMBERS criados com sucesso!"
     end
