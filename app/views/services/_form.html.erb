@@ -4,33 +4,33 @@
   </div>
 
   <%= form_for Service.new do |f| %>
+    <div class="col-lg-3">
+      <h4>New service</h4>
+       <div class="field">
+        <%= f.label :skill_id %><br>
+        <%= f.text_field :skill_id %>
+      </div>
+      <div class="field">
+        <%= f.label :member_id %><br>
+        <%= f.text_field :member_id %>
+      </div>
+      <div class="field">
+        <%= f.label :description %><br>
+        <%= f.text_field :description %>
+      </div>
+      <div class="field">
+        <%= f.label :price %><br>
+        <%= f.text_field :price %>
+      </div>
+      <div class="field">
+        <%= f.label :status %><br>
+        <%= f.text_field :status %>
+      </div>
+      <div class="actions">
+      <%= f.submit 'Enviar' %>
+      </div>
+    </div>
+  <% end %>
 
-  <div class="col-lg-3">
-    <h4>New service</h4>
-     <div class="field">
-      <%= f.label :skill_id %><br>
-      <%= f.text_field :skill_id %>
-    </div>
-    <div class="field">
-      <%= f.label :member_id %><br>
-      <%= f.text_field :member_id %>
-    </div>
-    <div class="field">
-      <%= f.label :description %><br>
-      <%= f.text_field :description %>
-    </div>
-    <div class="field">
-      <%= f.label :price %><br>
-      <%= f.text_field :price %>
-    </div>
-    <div class="field">
-      <%= f.label :status %><br>
-      <%= f.text_field :status %>
-    </div>
-    <div class="actions">
-    </div>
-  </div>
 </div>
 
-
-  <% end %>

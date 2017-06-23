@@ -62,8 +62,8 @@
               </div>
             </div>
             <hr>
-            <%= f.fields_for :services do |f_s| %>
-              <%= render partial: "orders/shared/service", locals: { f: f_s } %>
+            <%= f.fields_for :services do |f_service| %>
+              <%= render partial: "orders/shared/service", locals: { f: f_service } %>
             <% end %>
 
           </div>
