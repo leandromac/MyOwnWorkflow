@@ -1,4 +1,4 @@
-<%= form_for(@order) do |f| %>
+<%= form_for @order do |f| %>
   <% if @order.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
@@ -19,7 +19,7 @@
     <%= f.text_field :payment, class: 'form-control', placeholder: 'Payment method' %>
   </div>
   <div class="form-group">
-    <%= f.text_field :deadline, class: 'form-control datepicker' %>
+    <%= f.date_field :deadline, class: 'form-control datepicker' %>
   </div>
   <div class="form-group">
     <%= f.collection_select(:skill_id, Skill.all, :id, :title, {}, { class:'form-control' }) %>
@@ -36,6 +36,15 @@
   <div class="form-group">
     <%= f.text_field :status, class: 'form-control', placeholder: 'Status' %>
   </div>
+
+  <div class="form-group">
+    <%= f.fields_for :services do |f_service| %>
+      <%= render partial: "shared/service", locals: { f: f_service } %>
+    <% end %>
+  </div>
+    <div class="fields">
+          <%#= link_to_add_association("Adicionar Serviço", f, :services) %>
+    </div>
   <div class="form-group">
     <%= link_to 'Back', orders_path, class: 'btn btn-default' %>
     <%= f.submit 'Save', class: 'btn btn-primary'   %>

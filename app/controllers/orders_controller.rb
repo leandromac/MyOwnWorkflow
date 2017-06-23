@@ -43,7 +43,7 @@ class OrdersController < ApplicationController
   def update
     respond_to do |format|
       if @order.update(order_params)
-        format.html { redirect_to orders_path, notice: 'Order was successfully updated.' }
+        format.html { redirect_to order_path, notice: 'Order was successfully updated.' }
         format.json { render :show, status: :ok, location: @order }
       else
         format.html { render :edit }
@@ -71,6 +71,6 @@ class OrdersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
       params.require(:order).permit(:client_id, :payment, :deadline, :skill_id, :member_id, :description, :price, :status,
-        services_attributes: [:id, :skill, :_destroy] )
+        services_attributes: [:id, :skill_id, :member_id, :description, :price, :status, :order_id, :_destroy])
     end
 end
