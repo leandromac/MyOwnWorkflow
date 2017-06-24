@@ -3,12 +3,17 @@ Rails.application.routes.draw do
   resources :services
   get 'home/index'
 
+  get 'search', to: 'search#members'
+  #get 'search', to: 'search#clients'
+
   root 'home#index'
 
   resources :orders
   resources :members
   resources :clients
   resources :skills, except: [:show]
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
