@@ -14,6 +14,7 @@
     <% @admins.each do |admin| %>
       <tr>
         <td><%= admin.name %></td>
+        <td><%= admin.email %></td>
         <td><%= link_to 'Show', admin %></td>
         <td><%= link_to 'Edit', edit_admin_path(admin) %></td>
         <td><%= link_to 'Destroy', admin, method: :delete, data: { confirm: 'Are you sure?' } %></td>

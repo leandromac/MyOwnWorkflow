@@ -25,6 +25,8 @@
  }
  .navbar-right { margin-right: 0px !important }
 
+.navbar > ul > li { display: inline-block !important;}
+
 [data-notify="progressbar"] {
     margin-bottom: 0px;
     position: absolute;

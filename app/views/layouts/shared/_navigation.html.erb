@@ -12,12 +12,17 @@
             <!-- /.navbar-header -->
 
             <ul class="nav navbar-top-links navbar-right">
+                <% if admin_signed_in? %>
                 <li class="dropdown">
                     <%= link_to edit_admin_registration_path, class: 'dropdown-toggle' do %>
                         <i class="fa fa-user fa-fw"></i>
                         <%= current_admin.email %>
                     <% end %>
                 </li>
+                <li class="dropdown">
+                    <%= link_to 'Sair', destroy_admin_session_path, method: :delete %>
+                </li>
+                <% end %>
                 <!-- /.dropdown -->
             </ul>
             <!-- /.navbar-top-links -->
@@ -79,7 +84,6 @@
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
-
                         <!-- LEVEL MENU
                         <li>
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>

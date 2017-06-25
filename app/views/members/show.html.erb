@@ -11,7 +11,8 @@
             <%= image_tag @member.image.url(:medium), class: 'img-rounded', style: 'width: 38% !important' %>
           </p>
           <p class="text-center lead"><%= @member.name %> <br>
-            <small style="font-size:14px" class="text-muted"><%= @member.skill.title %> / <%= @member.location %></small>
+            <small style="font-size:14px" class="text-muted"><%= @member.skill.title %> <%= @member.location %></small>
+            <%= rating_for @member, "quality" %>
           </p>
           <hr>
           <p>

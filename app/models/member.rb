@@ -4,6 +4,8 @@ class Member < ActiveRecord::Base
 
   belongs_to :skill, counter_cache: true
 
+  ratyrate_rateable "quality"
+
   scope :search, ->(q, page) {
     where("lower(name) LIKE ?", "%#{q.downcase}%").page(page).per(10)
   }
