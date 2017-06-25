@@ -13,18 +13,10 @@
 
             <ul class="nav navbar-top-links navbar-right">
                 <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-user fa-fw"></i> <%= "test@email.com" %> <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li>
-                        <%= link_to '#' do %>
-                            <i class="fa fa-user fa-fw"></i> Edit Profile
-                        <% end %>
-                        </li>
-                        <li class="divider"></li>
-                    </ul>
-                    <!-- /.dropdown-user -->
+                    <%= link_to edit_admin_registration_path, class: 'dropdown-toggle' do %>
+                        <i class="fa fa-user fa-fw"></i>
+                        <%= current_admin.email %>
+                    <% end %>
                 </li>
                 <!-- /.dropdown -->
             </ul>
@@ -75,10 +67,15 @@
                                     <% end %>
                                 </li>
                                 <li>
-                            <%= link_to skills_path do %>
-                                <i class="fa fa-circle-thin fa-fw"></i> Skills
-                            <% end %>
-                        </li>
+                                    <%= link_to skills_path do %>
+                                        <i class="fa fa-circle-thin fa-fw"></i> Skills
+                                    <% end %>
+                                </li>
+                                <li>
+                                    <%= link_to admins_path do %>
+                                        <i class="fa fa-circle-thin fa-fw"></i> Admins
+                                    <% end %>
+                                </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
