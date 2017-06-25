@@ -4,13 +4,15 @@ class Member < ActiveRecord::Base
 
   belongs_to :skill, counter_cache: true
 
-  scope :search, ->(q) { where("lower(name) LIKE ?", "%#{q.downcase}%") }
-
-  scope :ascending_order, ->(quantity = 9, page = 1) {
-    limit(quantity).order(name: :asc).page(page).per(9)
+  scope :search, ->(q, page) {
+    where("lower(name) LIKE ?", "%#{q.downcase}%").page(page).per(10)
   }
+  scope :pagination_order, ->(page) {
+    order(name: :asc).page(page).per(10)
+  }
+
   # Paperclip
-  has_attached_file :image, styles: { large: "800x800#", medium: "320x320#", thumb: "150x150>" }, default_url: "/images/:style/missing.png"
+  has_attached_file :image, styles: { large: "800x800#", medium: "320x320#", thumb: "1100x150>" }, default_url: "/images/:style/missing.png"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
 

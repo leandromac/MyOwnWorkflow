@@ -8,7 +8,7 @@ class MembersController < ApplicationController
   # GET /members.json
   def index
     @members = Member.all
-    @members = Member.ascending_order(params[:page])
+    @members = Member.pagination_order(params[:page])
   end
 
   # GET /members/1

@@ -8,6 +8,7 @@ class ClientsController < ApplicationController
   # GET /clients.json
   def index
     @clients = Client.all
+    @clients = Client.pagination_order(params[:page])
   end
 
   # GET /clients/1

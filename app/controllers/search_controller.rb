@@ -5,8 +5,8 @@ class SearchController < ApplicationController
     end
 
     def members
-        @members = Member.descending_order(params[:page])
-        @members = Member.search(params[:q])
+        @members = Member.pagination_order(params[:page])
+        @members = Member.search(params[:q],params[:page])
     end
 
 end
