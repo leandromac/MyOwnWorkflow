@@ -62,8 +62,40 @@
               </div>
             </div>
             <hr>
-            <%= f.fields_for :services do |f_service| %>
-              <%= render partial: "orders/shared/service", locals: { f: f_service } %>
+
+          <%= f.fields_for :services do |f_service| %>
+              <div class="row">
+                <div class="col-lg-9">
+                  <h4>Services</h4>
+                </div>
+
+                <div class="col-lg-3">
+                  <h4>New service</h4>
+                   <div class="field">
+                    <%= f_service.label :skill_id %><br>
+                    <%= f_service.text_field :skill_id %>
+                  </div>
+                  <div class="field">
+                    <%= f_service.label :member_id %><br>
+                    <%= f_service.text_field :member_id %>
+                  </div>
+                  <div class="field">
+                    <%= f_service.label :description %><br>
+                    <%= f_service.text_field :description %>
+                  </div>
+                  <div class="field">
+                    <%= f_service.label :price %><br>
+                    <%= f_service.text_field :price %>
+                  </div>
+                  <div class="field">
+                    <%= f_service.label :status %><br>
+                    <%= f_service.text_field :status %>
+                  </div>
+                  <div class="actions">
+                  <%= link_to_remove_association("<span class='glyphicon glyphicon-trash text-danger' aria-hidden='true'></span>".html_safe,f) %>
+                  </div>
+                </div>
+              </div>
             <% end %>
 
           </div>

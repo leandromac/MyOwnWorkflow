@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'diagram/index'
+
   post '/rate' => 'rater#create', :as => 'rate'
   devise_for :admins
   resources :admins
