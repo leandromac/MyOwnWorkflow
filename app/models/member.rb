@@ -7,10 +7,10 @@ class Member < ActiveRecord::Base
   ratyrate_rateable "quality"
 
   scope :search, ->(q, page) {
-    where("lower(name) LIKE ?", "%#{q.downcase}%").page(page).per(10)
+    where("lower(name) LIKE ?", "%#{q.downcase}%").page(page).per(100)
   }
   scope :pagination_order, ->(page) {
-    order(name: :asc).page(page).per(10)
+    order(name: :asc).page(page).per(100)
   }
 
   # Paperclip

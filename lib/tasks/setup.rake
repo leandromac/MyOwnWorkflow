@@ -71,34 +71,17 @@ namespace :setup do
                 skill_id: 3,
 
             )
-            Member.create!(
-                name: "Bruno Luz",
-                email: "contato@brunoluz.com",
-                phone: "999999999",
-                portfolio: "http://www.utu.agency",
-                github: "http://www.github.com/utu",
-                location: "Alcântara, Portugal",
-                skill_id: 5,
-
-            )
-            Member.create!(
-                name: "Fábio Oliveira",
-                email: "fabio@utu.agency",
-                phone: "999999999",
-                portfolio: "http://www.utu.agency",
-                location: "Lisboal, Portugal",
-                skill_id: 7,
-
-            )
-            Member.create!(
-                name: "Kamilla Alves",
-                email: "kamilla_fn@hotmail.com",
-                phone: "999999999",
-                portfolio: "http://www.facebook.com/kamillaalves",
-                location: "Penalva, Portugal",
-                skill_id: 2,
-
-            )
+            50.times do
+                Member.create!(
+                    name: Faker::Name.name,
+                    email: Faker::Internet.email,
+                    phone: Faker::PhoneNumber.cell_phone,
+                    portfolio: Faker::Internet.url,
+                    github: Faker::Internet.url('github.com'),
+                    location: Faker::Address.state,
+                    skill_id: Skill.all.sample,
+                )
+            end
         puts "MEMBERS criados com sucesso!"
     end
 

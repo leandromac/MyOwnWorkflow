@@ -28,7 +28,8 @@ gem 'kaminari'
 gem 'kaminari-i18n'
 # A Ruby Gem that wraps the functionality of jQuery Raty library, and provides optional IMDB style rating.
 gem 'ratyrate'
-
+# A library for generating fake data such as names, addresses, and phone numbers.
+gem 'faker'
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap'
   gem 'rails-assets-angular'
