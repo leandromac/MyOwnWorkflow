@@ -3,10 +3,15 @@ Rails.application.routes.draw do
   get 'diagram/index'
 
   post '/rate' => 'rater#create', :as => 'rate'
-  devise_for :admins
+  devise_for :admins, controllers: {
+    sessions: 'admins/sessions',
+    registrations: 'admins/registrations'
+  }
   resources :admins
+  resources :admin_profiles, only: [:edit, :update]
   resources :projects
   resources :services
+
   get 'home/index'
 
   get 'search', to: 'search#members'

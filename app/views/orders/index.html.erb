@@ -1,4 +1,13 @@
-<p id="notice"><%= notice %></p>
+<script>
+  $.notify({
+  // options
+  message: '<%= notice %>'
+  },{
+    // settings
+    type: 'danger'
+  });
+</script>
+<p id="notice"></p>
 
 <div class="row">
     <div class="col-lg-12">

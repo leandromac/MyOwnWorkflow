@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  image: MyString
+  name: MyString
+  phone: MyString
+  skill_id: 
+  admin_id: 
+
+two:
+  image: MyString
+  name: MyString
+  phone: MyString
+  skill_id: 
+  admin_id: 

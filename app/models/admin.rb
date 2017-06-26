@@ -6,4 +6,7 @@ class Admin < ActiveRecord::Base
 
   ratyrate_rater
 
+  has_one :admin_profile
+  accepts_nested_attributes_for :admin_profile
+
 end
