@@ -1,6 +1,10 @@
+
 <%= simple_form_for(@admin) do |f| %>
   <%= f.error_notification %>
 
+<%= f.fields_for :admin_profile do |admin_fields| %>
+<%= admin_fields.text_field :name, class: 'form-control', placeholder: 'Nome...' %>
+<% end %>
   <div class="form-inputs">
     <%= f.input :name %>
   </div>
