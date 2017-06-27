@@ -37,7 +37,18 @@
                     <% unless client.email.blank? %>
                      <tr class="gradeA odd" role="row">
                         <td class="sorting_1"><%= link_to client.name, client %></td>
-                        <td><%= client.email %></td>
+                        <td class="text-center">
+                        <% unless client.website.blank? %>
+                          <%= link_to client.website, target: '_blank', class: 'btn btn-social-icon btn-sm btn-vk' do %>
+                            <i class="fa fa-link"></i>
+                          <% end %>
+                        <% end %>
+                        <% unless client.email.blank? %>
+                          <%= mail_to client.email, class: 'btn btn-social-icon btn-sm btn-tumblr' do %>
+                            <i class="fa fa-envelope"></i>
+                          <% end %>
+                        <% end %>
+                        </td>
                         <td><%= client.phone %></td>
                         <td><%= client.fiscal_number %></td>
                     </tr>

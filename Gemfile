@@ -32,6 +32,8 @@ gem 'ratyrate'
 gem 'rails-erd'
 # A library for generating fake data such as names, addresses, and phone numbers.
 gem 'faker'
+# FriendlyId is the “Swiss Army bulldozer” of slugging and permalink plugins for ActiveRecord.
+gem 'friendly_id'
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap'
   gem 'rails-assets-angular'

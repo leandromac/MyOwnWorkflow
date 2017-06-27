@@ -1,7 +1,25 @@
 <% if notice %>
-  <%= javascript_tag "$.notify( { message: '#{notice}'}, { type: 'success', placement: { from: 'top', align: 'center' }});" %>
+  <script>
+    $.notify({
+      message: '#{notice}'
+    }, {
+      type: 'success',
+      placement: {
+        from: 'top', align: 'center'
+      }
+    });
+  </script>
 <% end %>
 
 <% if alert %>
-    <%= javascript_tag "$.notify( { message: '#{alert}'}, { type: 'danger', placement: { from: 'top', align: 'center' }});" %>
+  <script>
+    $.notify({
+      message: '#{alert}'
+    }, {
+      type: 'success',
+      placement: {
+        from: 'top', align: 'danger'
+      }
+    });
+  </script>
 <% end %>

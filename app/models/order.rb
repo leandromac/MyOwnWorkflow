@@ -8,7 +8,7 @@ class Order < ActiveRecord::Base
 
 
     scope :pagination_order, ->(page) {
-        order(id: :asc).page(page).per(10)
+        order(id: :desc).page(page).per(10)
     }
 
 end

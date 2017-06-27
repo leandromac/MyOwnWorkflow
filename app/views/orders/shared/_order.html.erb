@@ -16,7 +16,7 @@
       <div class="panel panel-default">
           <div class="panel-heading">
               Order: <b><%= "COD0#{@order.id}" %></b>
-              <span class="pull-right">Created ad: <b><%= @order.created_at %></b></span>
+              <span class="pull-right">Created ad: <b><%= time_ago_in_words(@order.created_at) %></b></span>
           </div>
           <div class="panel-body">
             <div class="row">

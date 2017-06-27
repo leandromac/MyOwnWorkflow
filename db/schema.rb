@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170626225257) do
+ActiveRecord::Schema.define(version: 20170627195257) do
 
   create_table "admin_profiles", force: :cascade do |t|
     t.string   "image"
@@ -68,7 +68,23 @@ ActiveRecord::Schema.define(version: 20170626225257) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.string   "slug"
   end
+
+  add_index "clients", ["slug"], name: "index_clients_on_slug", unique: true
+
+  create_table "friendly_id_slugs", force: :cascade do |t|
+    t.string   "slug",                      null: false
+    t.integer  "sluggable_id",              null: false
+    t.string   "sluggable_type", limit: 50
+    t.string   "scope"
+    t.datetime "created_at"
+  end
+
+  add_index "friendly_id_slugs", ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
+  add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
+  add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
+  add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
 
   create_table "members", force: :cascade do |t|
     t.string   "name"
@@ -91,9 +107,11 @@ ActiveRecord::Schema.define(version: 20170626225257) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.string   "slug"
   end
 
   add_index "members", ["skill_id"], name: "index_members_on_skill_id"
+  add_index "members", ["slug"], name: "index_members_on_slug", unique: true
 
   create_table "orders", force: :cascade do |t|
     t.integer  "client_id"
