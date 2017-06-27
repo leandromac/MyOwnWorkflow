@@ -8,7 +8,6 @@ class Admins::RegistrationsController < Devise::RegistrationsController
     build_resource({})
     resource.build_admin_profile
     respond_with self.resource
-    save!
   end
 
   # POST /resource
